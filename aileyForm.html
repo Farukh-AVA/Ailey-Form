@@ -21,9 +21,9 @@
 
 
             <label for="TestAdmin">Test Administrator (If Applicable)</label><br>
-            <input type="text" id="testadministrator" name="TestAdmin"><br><br>
+            <input type="text" id="administrator" name="TestAdmin"><br><br>
             <label for="TestDate">Test Date</label><br>
-            <input type="date" id="testingdate" name="TestDate"><br><br>
+            <input type="date" id="date" name="TestDate"><br><br>
             <label for="email">Please enter your email address</label><br>
             <input type="email" id="email" name="email" onchange="validateEmail()"><br><br>
             <label for="FName">Please enter your first name</label><br>
@@ -57,76 +57,77 @@
 
             <!----------------------------------------------------------------------------------------->
             <label for="SBP"> Enter your Systolic Blood Pressure test score </label><br>
-            <input type="number" id="SBloodPressure" name="BP" min="0" onchange="validateSBP()"><br><br>
-
+            <input type="number" id="SBloodPressure" name="BP" min="0" "><br><br>
+            <!--onchange=" validateSBP()-->
             <label for="DBP"> Enter your Diastolic Blood Pressure test score </label><br>
-            <input type="number" id="DBloodPressure" name="BP" min="0" onchange="validateDBP()"><br><br>
-
+            <input type="number" id="DBloodPressure" name="BP" min="0" "><br><br>
+            <!--onchange=" validateDBP()-->
             <label for="ST"> Enter your Step test score </label><br>
-            <input type="number" id="StepTest" name="ST" min="0" onchange="validateST()"><br><br>
-
+            <input type="number" id="StepTest" name="ST" min="0"><br><br>
+            <!--onchange="validateST()-->
             <label for="SLS"> Enter your SLS test score </label><br>
-            <input type="number" id="SLS" name="SLS" min="0" onchange="validateSLS()"><br><br>
-
+            <input type="number" id="SLS" name="SLS" min="0" "><br><br>
+            <!--onchange=" validateSLS()-->
             <label for="WS"> Enter your Wall Squad test score </label><br>
-            <input type="number" id="WallSquad" name="WS" min="0" onchange="validateWS()"><br><br>
-
+            <input type="number" id="WallSquad" name="WS" min="0" "><br><br>
+            <!--onchange=" validateWS()-->
             <label for="Scap"> Enter your Scapula test score </label><br>
-            <input type="number" id="Scapula" name="Scap" min="0" onchange="validateScap()"><br><br>
-
+            <input type="number" id="Scapula" name="Scap" min="0"><br><br>
+            <!--onchange="validateScap()""-->
             <label for="Rhtof"> Enter your Right Hip Turnout - Floor (HTOF) test score </label><br>
-            <input type="number" id="rightHtof" name="Rhtof" min="0" onchange="validateRHTOF()"><br><br>
-
+            <input type="number" id="rightHtof" name="Rhtof" min="0"><br><br>
+            <!--onchange="validateRHTOF()"-->
             <label for="Lhtof"> Enter your Left Hip Turnout - Floor (HTOF) test score </label><br>
-            <input type="number" id="leftHtof" name="Lhtof" min="0" onchange="validateLHTOF()"><br><br>
-
+            <input type="number" id="leftHtof" name="Lhtof" min="0" "><br><br>
+            <!--onchange=" validateLHTOF()-->
             <label for="Rhtod"> Enter your Right Hip Turnout - Disc (HTOD) test score </label><br>
-            <input type="number" id="rightHtod" min="0" name="Rhtod" onchange="validateRHTOD()"><br><br>
-
+            <input type="number" id="rightHtod" min="0" name="Rhtod"><br><br>
+            <!--onchange="validateRHTOD()"-->
             <label for="Lhtod"> Enter your Left Hip Turnout - Disc (HTOD) test score </label><br>
-            <input type="number" id="leftHtod" min="0" name="Lhtod" onchange="validateLHTOD()"><br><br>
-
+            <input type="number" id="leftHtod" min="0" name="Lhtod"><br><br>
+            <!--onchange="validateLHTOD()"-->
             <label for="TT"> Enter your Thomas test score </label><br>
-            <input type="number" id="ThomasTest" name="TT" min="0" onchange="validateTT()"><br><br>
-
+            <input type="number" id="ThomasTest" name="TT" min="0"><br><br>
+            <!--onchange="validateTT()"-->
             <label for="HG"> Enter your Hip Grind test score </label><br>
-            <input type="number" id="HipGrind" name="HG" min="0" onchange="validateHG()"><br><br>
-
+            <input type="number" id="HipGrind" name="HG" min="0"><br><br>
+            <!-- onchange="validateHG()"-->
             <label for="SLR"> Enter your SLR test score </label><br>
-            <input type="number" id="SLR" name="SLR" min="0" onchange="validateSLR()"><br><br>
-
+            <input type="number" id="SLR" name="SLR" min="0"><br><br>
+            <!--onchange="validateSLR()"-->
             <label for="KHE"> Enter your Knee Hyper Extension test score </label><br>
-            <input type="number" id="KneeHyperExtension" name="KHE" min="0" onchange="validateKHE()"><br><br>
-
+            <input type="number" id="KneeHyperExtension" name="KHE" min="0"><br><br>
+            <!--onchange="validateKHE()"-->
             <label for="hipIR"> Enter your Knee Hip Internal Ternout test score </label><br>
-            <input type="number" id="KneeHyperExtension" name="hipIR" min="0" onchange="validatehipIR()"><br><br>
-
+            <input type="number" id="KneeHyperExtension" name="hipIR" min="0"><br><br>
+            <!--onchange="validatehipIR()"-->
             <label for="hipER"> Enter your Knee Hip External Ternout test score </label><br>
-            <input type="number" id="KneeHyperExtension" name="hipER" min="0" onchange="validatehipER()"><br><br>
-
+            <input type="number" id="KneeHyperExtension" name="hipER" min="0"><br><br>
+            <!--onchange="validatehipER()"-->
             <label for="1stMTPDF"> Enter your 1st MTP DF test score </label><br>
-            <input type="number" id="1stMTPDF" name="1stMTPDF" min="0" onchange="validate1stMTPDF()"><br><br>
-
-            <label for="PB"> Enter your Passe Balance test score </label><br>
-            <input type="number" id="" name="PB" min="0" onchange="validatePB()"><br><br>
-
-            <label for="SLBalEC"> Enter your SL Bal EC test score </label><br>
-            <input type="number" id="SLBalEC" name="SLBalEC" min="0" onchange="validateSLBalEC()"><br><br>
-
+            <input type="number" id="1stMTPDF" name="1stMTPDF" min="0"><br><br>
+            <!--onchange="validate1stMTPDF()"-->
+            <label for="PB"> Enter your Passe Balance test score in sec </label><br>
+            <input type="number" id="" name="PB" min="0"><br><br>
+            <!--onchange="validatePB()"-->
+            <label for="SLBalEC"> Enter your SL Bal EC test score in sec </label><br>
+            <input type="number" id="SLBalEC" name="SLBalEC" min="0"><br><br>
+            <!--onchange="validateSLBalEC()"-->
             <label for="YB"> Enter your Y-Balance test score </label><br>
-            <input type="number" id="YBalance" name="YB" min="0" onchange="validateYB()"><br><br>
-
+            <input type="number" id="YBalance" name="YB" min="0"><br><br>
+            <!--onchange="validateYB()"-->
             <label for="SLR"> Enter your SL Relevé test score </label><br>
-            <input type="number" id="SLReleve" name="SLR" min="0" onchange="validateSLR()"><br><br>
-
+            <input type="number" id="SLReleve" name="SLR" min="0"><br><br>
+            <!--onchange="validateSLR()"-->
             <label for="SLB"> Enter your SL Bridge test score </label><br>
-            <input type="number" id="SLBridge" name="SLB" min="0" onchange="validateSLB()"><br><br>
-
+            <input type="number" id="SLBridge" name="SLB" min="0"><br><br>
+            <!--onchange="validateSLB()"-->
             <label for="SPHA"> Enter your Side pland with hip abduction test score </label><br>
-            <input type="number" id="SidePlankHip" name="SPHA" min="0" onchange="validateSPHA()"><br><br>
-
+            <input type="number" id="SidePlandHip" name="SPHA" min="0"><br><br>
+            <!--onchange="validateSPHA()"-->
             <label for="CKCUEST"> Enter your CKCUEST test score </label><br>
-            <input type="number" id="CKCUEST" name="CKCUEST" min="0" onchange="validateCKCUEST()"><br><br>
+            <input type="number" id="CKCUEST" name="CKCUEST" min="0"><br><br>
+            <!-- onchange="validateCKCUEST()"-->
             <!----------------------------------------------------------------------------------------->
 
 
@@ -175,7 +176,7 @@
             <br>
             <br>
             <!--<button type="button" onclick="pdfMake.createPdf(create_pdf()).print();">Submit</button>-->
-            <button type="button" onclick="validateForm()">Submit</button>
+            <button type="button" onclick="getData()">Submit</button>
 
         </form>
     </div>

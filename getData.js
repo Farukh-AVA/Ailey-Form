@@ -1,4 +1,6 @@
 function getData() {
+    var admin = document.getElementById("admiinistrator").value;
+    var date = document.getElementById("date").value;
     var email = document.getElementById("email").value;
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
@@ -30,8 +32,8 @@ function getData() {
     var SLR = get_SLR_vals(AileyForm.SLR.value);
     var kneeHyperExtension = get_kneeHyperExtension_vals(AileyForm.KneeHyperExtension.value);
     //need to confirm
-    //var kneeHipInt = get_kneeHipInt_vals(AileyForm.KneeHipInt.value);
-    //var kneeHipExt = get_kneeHipExt_vals(AileyForm.KneeHipExt.value);
+    var kneeHipInt = get_kneeHipInt_vals(AileyForm.KneeHipInt.value);
+    var kneeHipExt = get_kneeHipExt_vals(AileyForm.KneeHipExt.value);
     //need to confirm
     var firstMTPDF = get_firstMTPDF_vals(AileyForm.FirstMTPDF.value);
 
@@ -39,14 +41,105 @@ function getData() {
 
     var passeBalance = get_passeBalance_vals(AileyForm.PasseBalance.value);
     var SLBalEC = get_SLBalEC_vals(AileyForm.SLBalEC.value);
-    var yBalance = get_yBalance_vals(AileyForm.YBalance.value);
+    //need to confirm 
+    //var yBalance = get_yBalance_vals(AileyForm.YBalance.value);
+    // what is the min
     var slReleve = get_slReleve_vals(AileyForm.SLReleve.value);
     var slBridge = get_slBridge_vals(AileyForm.SLBridge.value);
-    var sidePlankHip = get_sidePlankHip_vals(AileyForm.SidePlankHip.value);
+    var sidePlandHip = get_sidePlandHip_vals(AileyForm.SidePlandHip.value);
     var CKCUEST = get_CKCUEST_vals(AileyForm.CKCUEST.value);
+
+    var obj = {
+        admin: admin,
+        date: date,
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        ethnicity: ethnicity,
+        sex: sex,
+        company: company,
+        age: age,
+        legLength: legLength,
+        workingLeg: workingLeg,
+        standingLeg: standingLeg,
+        threeMonthInjury: threeMonthInjury,
+        fiveYearInjury: fiveYearInjury,
+        consent: consent,
+
+        bloodPressure: bloodPressure,
+        stepTest: stepTest,
+        SLS: SLS,
+        wallSquad: wallSquad,
+        scapula: scapula,
+        rightHtod: rightHtod,
+        leftHtod: leftHtod,
+        rightHtof: rightHtof,
+        leftHtof: leftHtof,
+        SLR: SLR,
+        kneeHyperExtension: kneeHyperExtension,
+        kneeHipInt: kneeHipInt,
+        kneeHipExt: kneeHipExt,
+        firstMTPDF: firstMTPDF,
+        IRvsER: IRvsER,
+        passeBalance: passeBalance,
+        SLBalEC: SLBalEC,
+        slReleve: slReleve,
+        slBridge: slBridge,
+        sidePlandHip: sidePlandHip,
+        CKCUEST: CKCUEST,
+
+    }
+
+    test();
+    return obj;
 
 
 }
+
+function test() {
+    var data = getData();
+
+    console.log(
+        data.admin + "/n" +
+        data.date + "/n" +
+        data.firstName + "/n" +
+        data.lastName + "/n" +
+        data.ethnicity + "/n" +
+        data.sex + "/n" +
+        data.company + "/n" +
+        data.age + "/n" +
+        data.legLength + "/n" +
+        data.standingLeg + "/n" +
+        data.threeMonthInjury + "/n" +
+        data.fiveYearInjury + "/n" +
+        data.consent + "/n/n" +
+
+        data.bloodPressure.grade + "/n" +
+        data.stepTest.grade + "/n" +
+        data.SLS.grade + "/n" +
+        data.stepTest.grade + "/n" +
+        data.wallSquad.grade + "/n" +
+        data.rightHtod + "/n" +
+        data.leftHtod + "/n" +
+        data.rightHtof. + "/n" +
+        data.leftHtod + "/n" +
+        data.SLR + "/n" +
+        data.kneeHyperExtension + "/n" +
+        data.kneeHipInt + "/n" +
+        data.kneeHipExt + "/n" +
+        data.IRvsER + "/n" +
+        data.firstMTPDF + "/n" +
+        data.passeBalance + "/n" +
+        data.SLBalEC + "/n" +
+        data.slReleve + "/n" +
+        data.slBridge + "/n" +
+        data.sidePlandHip + "/n" +
+        data.CKCUEST + "/n"
+
+
+    )
+}
+
 
 function value_ranges(amount, groups) {
     for (g in groups) {
@@ -78,7 +171,7 @@ function get_bloodPressure_vals(amount1, amount2) {
         return g3;
         //need to confirm
     } else if (systolic >= 129 && diastolic >= 80) {
-        g4;
+        return g4;
     }
 
 
@@ -132,7 +225,7 @@ function get_SLS_vals(amount) {
 
 }
 
-function get_SLS_vals(amount) {
+function get_wallSquad_vals(amount) {
 
     var wallSquad = Math.ceil(amount);
 
@@ -231,6 +324,35 @@ function get_kneeHyperExtension_vals(amount) {
     }
 
 }
+function get_kneeHipInt_vals(amount,) {
+
+    var g1 = { grade: "Needs Work", comments: "Adequate hip external (turnout) & rotation (turn in) are both important for hip health.  Insufficient or an imbalance in hip rotation increases the risk of hip, pelvis, and low back dysfunction." }
+    var g2 = { grade: "Good", comments: "Adequate hip external (turnout) & rotation (turn in) are both important for hip health.  Insufficient or an imbalance in hip rotation increases the risk of hip, pelvis, and low back dysfunction." }
+
+    var kneeHipInt = Math.ceil(amount);
+
+
+    if (kneeHipInt <= 30) {
+        return g1;
+    } else {
+        return g2;
+    }
+}
+
+function get_kneeHipExt_vals(amount,) {
+
+    var g1 = { grade: "Problem", comments: "Adequate hip external (turnout) & rotation (turn in) are both important for hip health.  Insufficient or an imbalance in hip rotation increases the risk of hip, pelvis, and low back dysfunction." }
+    var g2 = { grade: "Good", comments: "Adequate hip external (turnout) & rotation (turn in) are both important for hip health.  Insufficient or an imbalance in hip rotation increases the risk of hip, pelvis, and low back dysfunction." }
+
+    var kneeHipInt = Math.ceil(amount);
+
+
+    if (kneeHipInt <= 45) {
+        return g1;
+    } else {
+        return g2;
+    }
+}
 // need to confirm what to do with Prone hip IR, Prone hip ER
 function get_IRvsER_vals(amount1, amount2) {
 
@@ -256,3 +378,115 @@ function get_IRvsER_vals(amount1, amount2) {
 }
 
 
+
+function get_firstMTPDF_vals(amount,) {
+
+    var g1 = { grade: "Exelent", comments: "90° of great toe extension is require for healthy relevé position. Inadequate great toe extension can lead to compensations which may cause foot and ankle injuries." }
+    var g2 = { grade: "Needs Work", comments: "90° of great toe extension is require for healthy relevé position. Inadequate great toe extension can lead to compensations which may cause foot and ankle injuries." }
+
+    var kneeHipInt = Math.ceil(amount);
+
+
+    if (kneeHipInt >= 90) {
+        return g1;
+    } else {
+        return g2;
+    }
+}
+
+function get_passeBalance_vals(amount) {
+
+    var passeBalance = Math.ceil(amount);
+
+    var definition = {
+
+        g1: { min: 13, max: Infinity, grade: "Exelent" },
+        g2: { min: 9, max: 12, grade: "Very Good" },
+        g3: { min: 5, max: 8, grade: "Average" },
+        g4: { min: 0, max: 4, grade: "Needs Work" }
+    }
+
+    return value_ranges(passeBalance, definition)
+
+}
+
+function get_SLBalEC_vals(amount) {
+
+    var SLBalEC = Math.ceil(amount);
+
+    var definition = {
+
+        g1: { min: 45, max: Infinity, grade: "Exelent", comments: "This is a test of ankle/foot proprioception, muscle strength, & motor control" },
+        g2: { min: 30, max: 45, grade: "Good", comments: "This is a test of ankle/foot proprioception, muscle strength, & motor control" },
+        g3: { min: 0, max: 29, grade: "Needs Work", comments: "This is a test of ankle/foot proprioception, muscle strength, & motor control" }
+    }
+
+    return value_ranges(SLBalEC, definition)
+
+}
+
+function get_SLReleve_vals(amount) {
+
+    var SLReleve = Math.ceil(amount);
+
+    var definition = {
+
+        g1: { min: 35, max: Infinity, grade: "Excellent", comments: "This is test for calf strength. The ability to perform 35 repeated single leg relevés has been linked to a reduce risk of calf, foot, and ankle injuries" },
+        g2: { min: 25, max: 34, grade: "Good", comments: "This is test for calf strength. The ability to perform 35 repeated single leg relevés has been linked to a reduce risk of calf, foot, and ankle injuries" },
+        g3: { min: 16, max: 24, grade: "Average", comments: "This is test for calf strength. The ability to perform 35 repeated single leg relevés has been linked to a reduce risk of calf, foot, and ankle injuries" },
+        g4: { min: 0, max: 15, grade: "Needs Work", comments: "This is test for calf strength. The ability to perform 35 repeated single leg relevés has been linked to a reduce risk of calf, foot, and ankle injuries" }
+    }
+
+    return value_ranges(SLReleve, definition)
+
+}
+
+function get_SLBridge_vals(amount) {
+
+    var SLBridge = Math.ceil(amount);
+
+    var definition = {
+
+        g1: { min: 30, max: Infinity, grade: "Excellent", comments: "This is a test of hamstring and gluteal strength. Strong hamstrings can reduce you risk of hamstring strains" },
+        g2: { min: 25, max: 29, grade: "Good", comments: "This is a test of hamstring and gluteal strength. Strong hamstrings can reduce you risk of hamstring strains" },
+        g3: { min: 20, max: 24, grade: "Average", comments: "This is a test of hamstring and gluteal strength. Strong hamstrings can reduce you risk of hamstring strains" },
+        g4: { min: 0, max: 19, grade: "Needs Work", comments: "This is a test of hamstring and gluteal strength. Strong hamstrings can reduce you risk of hamstring strains" }
+    }
+
+    return value_ranges(SLBridge, definition)
+
+}
+
+
+function get_sidePlandHip_vals(amount) {
+
+    var sidePlandHip = Math.ceil(amount);
+
+    var definition = {
+
+        g1: { min: 45, max: Infinity, grade: "Excellent", comments: "This a test of core & hip stabilizer strength" },
+        g2: { min: 30, max: 44, grade: "Good", comments: "This a test of core & hip stabilizer strength" },
+        g3: { min: 20, max: 29, grade: "Average", comments: "This a test of core & hip stabilizer strength" },
+        g4: { min: 0, max: 19, grade: "Needs Work", comments: "This a test of core & hip stabilizer strength" }
+    }
+
+    return value_ranges(sidePlandHip, definition)
+
+}
+
+function get_CKCUEST_vals(amount) {
+
+    var CKCUEST = Math.ceil(amount);
+
+    var definition = {
+
+        g1: { min: 25, max: Infinity, grade: "Excellent", comments: "This is an endurance test of shoulder and scapula muscles" },
+        g2: { min: 20, max: 24, grade: "Good", comments: "This is an endurance test of shoulder and scapula muscles" },
+        g3: { min: 16, max: 19, grade: "Average", comments: "This is an endurance test of shoulder and scapula muscles" },
+        g4: { min: 10, max: 15, grade: "Needs Work", comments: "This is an endurance test of shoulder and scapula muscles" },
+        g5: { min: 0, max: 9, grade: "See PT", comments: "This is an endurance test of shoulder and scapula muscles" }
+    }
+
+    return value_ranges(CKCUEST, definition)
+
+}
