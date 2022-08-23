@@ -1,5 +1,6 @@
+
 function getData() {
-    var admin = document.getElementById("admiinistrator").value;
+    var admin = document.getElementById("administrator").value;
     var date = document.getElementById("date").value;
     var email = document.getElementById("email").value;
     var firstName = document.getElementById("firstName").value;
@@ -20,10 +21,11 @@ function getData() {
     var SLS = get_SLS_vals(AileyForm.SLS.value);
     var wallSquad = get_wallSquad_vals(AileyForm.WallSquad.value);
     var scapula = get_scapula_vals(AileyForm.Scapula.value);
-    var rightHtod = get_rightHtod_vals(AileyForm.rightHtod.value);
-    var leftHtod = get_leftHtod_vals(AileyForm.leftHtod.value);
-    var rightHtof = get_rightHtof_vals(AileyForm.rightHtof.value, AileyForm.rightHtod.value);
-    var leftHtof = get_leftHtof_vals(AileyForm.leftHtof.value, AileyForm.leftHtod.value);
+    var rightHtof = get_htof_vals(AileyForm.rightHtof.value, AileyForm.rightHtod.value);
+    var leftHtof = get_htof_vals(AileyForm.leftHtof.value, AileyForm.leftHtod.value);
+    var rightHtod = get_htod_vals(AileyForm.rightHtod.value);
+    var leftHtod = get_htod_vals(AileyForm.leftHtod.value);
+
 
     //need to confirm
     //var thomasTest = get_thomasTest_vals(AileyForm.ThomasTest.value);
@@ -90,55 +92,88 @@ function getData() {
 
     }
 
-    test();
+    console.log(
+        obj.admin + "\n" +
+        obj.date + "\n" +
+        obj.firstName + "\n" +
+        obj.lastName + "\n" +
+        obj.ethnicity + "\n" +
+        obj.sex + "\n" +
+        obj.company + "\n" +
+        obj.age + "\n" +
+        obj.legLength + "\n" +
+        obj.standingLeg + "\n" +
+        obj.threeMonthInjury + "\n" +
+        obj.fiveYearInjury + "\n" +
+        obj.consent + "\n\n" +
+
+        "bloodPressure: " + obj.bloodPressure.grade + "\n" +
+        "bloodPressure comments: " + obj.bloodPressure.comments + "\n" +
+        "\n" +
+        "stepTest: " + obj.stepTest.grade + "\n" +
+        "stepTest comments: " + obj.stepTest.comments + "\n" +
+        "\n" +
+        "SLS: " + obj.SLS.grade + "\n" +
+        "SLS comments: " + obj.stepTest.comments + "\n" +
+        "\n" +
+        "wallSquad: " + obj.wallSquad.grade + "\n" +
+        "wallSquad score: " + obj.wallSquad.score + "\n" +
+        "\n" +
+        "rightHtod: " + obj.rightHtod.grade + "\n" +
+        "rightHtod comments:" + obj.rightHtod.comments + "\n" +
+        "\n" +
+        "leftHtod: " + obj.leftHtod.grade + "\n" +
+        "leftHtod comments:" + obj.leftHtod.comments + "\n" +
+        "\n" +
+        "rightHtof: " + obj.rightHtof.grade + "\n" +
+        "rightHtof comments:" + obj.rightHtof.comments + "\n" +
+        "\n" +
+        "leftHtod: " + obj.leftHtod.grade + "\n" +
+        "leftHtod comments:" + obj.leftHtod.comments + "\n" +
+        "\n" +
+        "SLR: " + obj.SLR.grade + "\n" +
+        "SLR comments:" + obj.SLR.comments + "\n" +
+        "\n" +
+        "kneeHyperExtension: " + obj.kneeHyperExtension.grade + "\n" +
+        "kneeHyperExtension comments " + obj.kneeHyperExtension.comments + "\n" +
+        "\n" +
+        "kneeHipInt: " + obj.kneeHipInt.grade + "\n" +
+        "kneeHipInt comments: " + obj.kneeHipInt.comments + "\n" +
+        "\n" +
+        "kneeHipExt: " + obj.kneeHipExt.grade + "\n" +
+        "kneeHipExt comments: " + obj.kneeHipExt.comments + "\n" +
+        "\n" +
+        "IRvsER: " + obj.IRvsER.grade + "\n" +
+        "IRvsER comments: " + obj.IRvsER.comments + "\n" +
+        "\n" +
+        "firstMTPDF: " + obj.firstMTPDF.grade + "\n" +
+        "firstMTPDF comments: " + obj.firstMTPDF.comments + "\n" +
+        "\n" +
+        "passeBalance: " + obj.passeBalance.grade + "\n" +
+        "\n" +
+        "SLBalEC: " + obj.SLBalEC.grade + "\n" +
+        "SLBalEC comments: " + obj.SLBalEC.comments + "\n" +
+        "\n" +
+        "slReleve: " + obj.slReleve.grade + "\n" +
+        "slReleve comments: " + obj.slReleve.comments + "\n" +
+        "\n" +
+        "slBridge: " + obj.slBridge.grade + "\n" +
+        "slBridge comments: " + obj.slBridge.comments + "\n" +
+        "\n" +
+        "sidePlandHip: " + obj.sidePlandHip.grade + "\n" +
+        "sidePlandHip comments: " + obj.sidePlandHip.comments + "\n" +
+        "\n" +
+        "CKCUEST: " + obj.CKCUEST.grade + "\n" +
+        "CKCUEST comments: " + obj.CKCUEST.comments + "\n"
+
+
+    )
+
     return obj;
 
 
 }
 
-function test() {
-    var data = getData();
-
-    console.log(
-        data.admin + "/n" +
-        data.date + "/n" +
-        data.firstName + "/n" +
-        data.lastName + "/n" +
-        data.ethnicity + "/n" +
-        data.sex + "/n" +
-        data.company + "/n" +
-        data.age + "/n" +
-        data.legLength + "/n" +
-        data.standingLeg + "/n" +
-        data.threeMonthInjury + "/n" +
-        data.fiveYearInjury + "/n" +
-        data.consent + "/n/n" +
-
-        data.bloodPressure.grade + "/n" +
-        data.stepTest.grade + "/n" +
-        data.SLS.grade + "/n" +
-        data.stepTest.grade + "/n" +
-        data.wallSquad.grade + "/n" +
-        data.rightHtod + "/n" +
-        data.leftHtod + "/n" +
-        data.rightHtof. + "/n" +
-        data.leftHtod + "/n" +
-        data.SLR + "/n" +
-        data.kneeHyperExtension + "/n" +
-        data.kneeHipInt + "/n" +
-        data.kneeHipExt + "/n" +
-        data.IRvsER + "/n" +
-        data.firstMTPDF + "/n" +
-        data.passeBalance + "/n" +
-        data.SLBalEC + "/n" +
-        data.slReleve + "/n" +
-        data.slBridge + "/n" +
-        data.sidePlandHip + "/n" +
-        data.CKCUEST + "/n"
-
-
-    )
-}
 
 
 function value_ranges(amount, groups) {
@@ -170,7 +205,7 @@ function get_bloodPressure_vals(amount1, amount2) {
     } else if ((systolic >= 120 && systolic <= 129) && diastolic <= 80) {
         return g3;
         //need to confirm
-    } else if (systolic >= 129 && diastolic >= 80) {
+    } else if (systolic > 129 && diastolic > 80) {
         return g4;
     }
 
@@ -237,7 +272,7 @@ function get_wallSquad_vals(amount) {
         return g1;
     } else if (wallSquad >= 50 && wallSquad <= 59) {
         return g2;
-    } else if (wallSquad >= 45 && wallSquad <= 50) {
+    } else if (wallSquad >= 45 && wallSquad <= 49) {
         return g3;
     }
 
@@ -259,12 +294,15 @@ function get_scapula_vals(amount) {
 
 function get_htod_vals(amount) {
     var roundToCeil = Math.ceil(amount);
+
     var definition = {
+
         g1: { min: 60, max: Infinity, score: 100, grade: "Excellent", comments: "Full and symmertical hip range of motion is important for overall joint health. Limited and excess hip range of motion can increase the risk of injury, decrease stability, and affect performance." },
         g2: { min: 50, max: 59, score: 75, grade: "Good", comments: "Full and symmertical hip range of motion is important for overall joint health. Limited and excess hip range of motion can increase the risk of injury, decrease stability, and affect performance." },
         g3: { min: 45, max: 49, score: 50, grade: "Average", comments: "Full and symmertical hip range of motion is important for overall joint health. Limited and excess hip range of motion can increase the risk of injury, decrease stability, and affect performance." },
         g4: { min: 40, max: 45, score: 25, grade: "Poor", comments: "Full and symmertical hip range of motion is important for overall joint health. Limited and excess hip range of motion can increase the risk of injury, decrease stability, and affect performance." },
         g5: { min: 0, max: 40, score: 0, grade: "Very Poor", comments: "Full and symmertical hip range of motion is important for overall joint health. Limited and excess hip range of motion can increase the risk of injury, decrease stability, and affect performance." }
+
     }
 
     return value_ranges(roundToCeil, definition)
@@ -425,7 +463,7 @@ function get_SLBalEC_vals(amount) {
 
 }
 
-function get_SLReleve_vals(amount) {
+function get_slReleve_vals(amount) {
 
     var SLReleve = Math.ceil(amount);
 
@@ -441,7 +479,7 @@ function get_SLReleve_vals(amount) {
 
 }
 
-function get_SLBridge_vals(amount) {
+function get_slBridge_vals(amount) {
 
     var SLBridge = Math.ceil(amount);
 
@@ -490,3 +528,517 @@ function get_CKCUEST_vals(amount) {
     return value_ranges(CKCUEST, definition)
 
 }
+
+
+function validateEmail() {
+
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(AileyForm.email.value)) {
+        return (true);
+    }
+    alert("You have entered an invalid email address!");
+    return (false);
+}
+
+function validateAge() {
+
+    var age = AileyForm.age.value
+    if (age >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, age must be positive number!");
+    return (false);
+
+}
+
+function validateLegLength() {
+
+    var legLength = AileyForm.legLength.value
+    if (legLength >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Leg Length must be positive number!");
+    return (false);
+
+}
+
+function validateSBloodPressure() {
+
+    var SBloodPressure = AileyForm.SBloodPressure.value
+    if (SBloodPressure >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Systolic Blood Pressure must be positive number!");
+    return (false);
+
+}
+
+function validateDBloodPressure() {
+
+    var DBloodPressure = AileyForm.DBloodPressure.value
+    if (DBloodPressure >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Diastolic Blood Pressure must be positive number!");
+    return (false);
+
+}
+
+function validateStepTest() {
+
+    var StepTest = AileyForm.StepTest.value
+    if (StepTest >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Step test must be positive number!");
+    return (false);
+
+}
+
+function validateSLS() {
+
+    var SLS = AileyForm.SLS.value
+    if (SLS >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, SLS must be positive number!");
+    return (false);
+
+}
+
+function validateWallSquad() {
+
+    var WallSquad = AileyForm.WallSquad.value
+    if (WallSquad >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Wall Squad must be positive number!");
+    return (false);
+
+}
+
+function validateScapulas() {
+
+    var Scapulas = AileyForm.Scapula.value
+    if (Scapulas >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Scapulas must be positive number!");
+    return (false);
+
+}
+
+function validateRHTOF() {
+    var RHTOF = AileyForm.rightHtof.value;
+    if (RHTOF >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Right Hip Turnout - Floor test score must be positive number!");
+    return (false);
+}
+
+function validateLHTOF() {
+    var LHTOF = AileyForm.leftHtof.value;
+    if (LHTOF >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Left Hip Turnout - Floor test score must be positive number!");
+    return (false);
+}
+
+function validateRHTOD() {
+    var RHTOD = AileyForm.rightHtod.value;
+    if (RHTOD >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Right Hip Turnout - Disc test score must be positive number!");
+    return (false);
+}
+
+function validateLHTOD() {
+    var LHTOD = AileyForm.leftHtod.value;
+    if (LHTOD >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Left Hip Turnout - Disc test score must be positive number!");
+    return (false);
+}
+
+
+function validateSLR() {
+
+    var SLR = AileyForm.SLR.value;
+    if (SLR >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, SLR test score must be positive number!");
+    return (false);
+
+}
+
+function validateKneeHyperExtension() {
+
+    var KneeHyperExtension = AileyForm.KneeHyperExtension.value;
+    if (KneeHyperExtension >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Knee Hyper Extension test score must be positive number!");
+    return (false);
+
+}
+function validateKneeHipInt() {
+
+    var KneeHipInt = AileyForm.KneeHipInt.value;
+    if (KneeHipInt >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Prone hip IR test score must be positive number!");
+    return (false);
+
+}
+
+function validateKneeHipExt() {
+
+    var KneeHipExt = AileyForm.KneeHipExt.value;
+    if (KneeHipExt >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Prone hip ER test score must be positive number!");
+    return (false);
+
+}
+
+function validateFirstMTPDF() {
+
+    var FirstMTPDF = AileyForm.FirstMTPDF.value;
+    if (FirstMTPDF >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, 1st MTP DF test score must be positive number!");
+    return (false);
+
+}
+
+function validatePasseBalance() {
+
+    var PasseBalance = AileyForm.PasseBalance.value;
+    if (PasseBalance >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Passe Balance test score must be positive number!");
+    return (false);
+
+}
+
+function validateSLBalEC() {
+
+    var SLBalEC = AileyForm.SLBalEC.value;
+    if (SLBalEC >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, SL Bal EC test score must be positive number!");
+    return (false);
+
+}
+
+function validateSLReleve() {
+
+    var SLReleve = AileyForm.SLReleve.value;
+    if (SLReleve >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, SL Releve test score must be positive number!");
+    return (false);
+
+}
+
+function validateSLBridge() {
+
+    var SLBridge = AileyForm.SLBridge.value;
+    if (SLBridge >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, SL Bridge test score must be positive number!");
+    return (false);
+
+}
+
+function validateSidePlandHip() {
+
+    var SidePlandHip = AileyForm.SidePlandHip.value;
+    if (SidePlandHip >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, Side Pland Hip test score must be positive number!");
+    return (false);
+
+}
+
+function validateCkcuest() {
+    var ckcuest = AileyForm.CKCUEST.value
+    if (ckcuest >= 0) {
+        return (true);
+    }
+
+    alert("Invalid number, CKCUEST must be positive number!");
+    return (false);
+}
+
+
+function validateForm() {
+
+    var dateInput = document.getElementById("date");
+    if (!dateInput.value) {
+        alert("Date must be filled out");
+        return false;
+    };
+
+    if (!validateEmail()) { return false; }
+    var email = document.getElementById("email").value;
+    if (email === "") {
+        alert("Email must be filled out");
+        return false;
+    };
+    var firstName = document.getElementById("firstName").value;
+    if (firstName === "") {
+        alert("First name must be filled out");
+        return false;
+    };
+
+    var lastName = document.getElementById("lastName").value;
+    if (lastName === "") {
+        alert("Last name must be filled out");
+        return false;
+    };
+
+    if (!validateAge()) { return false; }
+    var age = document.getElementById("age").value;
+    if (age === "") {
+        alert("Age must be filled out");
+        return false;
+    };
+
+    if (!validateLegLength()) { return false; }
+    var age = document.getElementById("legLength").value;
+    if (age === "") {
+        alert("Leg length must be filled out");
+        return false;
+    };
+
+    var company = document.getElementById("company").value;
+    if (company === "") {
+        alert("Company must be filled out");
+        return false;
+    };
+
+    var SBloodPressure = document.getElementById("SBloodPressure").value;
+    if (SBloodPressure === "") {
+        alert("Systolic Blood Pressure must be filled out");
+        return false;
+    };
+    if (!validateSBloodPressure()) {
+        return false;
+    }
+
+    var DBloodPressure = document.getElementById("DBloodPressure").value;
+    if (DBloodPressure === "") {
+        alert("Diastolic  Blood Pressure must be filled out");
+        return false;
+    };
+    if (!validateDBloodPressure()) {
+        return false;
+    }
+
+    var StepTest = document.getElementById("StepTest").value;
+    if (StepTest === "") {
+        alert("Step test score must be filled out");
+        return false;
+    };
+    if (!validateStepTest()) {
+        return false;
+    }
+
+    var SLS = document.getElementById("SLS").value;
+    if (SLS === "") {
+        alert("SLS test score must be filled out");
+        return false;
+    };
+    if (!validateSLS()) {
+        return false;
+    }
+
+    var WallSquad = document.getElementById("WallSquad").value;
+    if (WallSquad === "") {
+        alert("Wall Squad test score must be filled out");
+        return false;
+    };
+    if (!validateWallSquad()) {
+        return false;
+    }
+
+    var Scapula = document.getElementById("Scapula").value;
+    if (Scapula === "") {
+        alert("Scapula test must be filled out");
+        return false;
+    };
+    if (!validateScapulas()) {
+        return false;
+    }
+
+    var RHTOF = document.getElementById("rightHtof").value;
+    if (RHTOF === "") {
+        alert("Right Hip Turnout - Floor (HTOF) test score must be filled out");
+        return false;
+    };
+    if (!validateRHTOF()) {
+        return false;
+    }
+
+    var LHTOF = document.getElementById("leftHtof").value;
+    if (LHTOF === "") {
+        alert("Left Hip Turnout - Floor (HTOF) test score must be filled out");
+        return false;
+    };
+    if (!validateLHTOF()) {
+        return false;
+    }
+
+    var RHTOD = document.getElementById("rightHtod").value;
+    if (RHTOD === "") {
+        alert("Right Hip Turnout - Disc (HTOD) test score must be filled out");
+        return false;
+    };
+    if (!validateRHTOD()) {
+        return false;
+    }
+
+    var LHTOD = document.getElementById("leftHtod").value;
+    if (LHTOD === "") {
+        alert("Left Hip Turnout - Disc (HTOD) test score must be filled out");
+        return false;
+    };
+    if (!validateLHTOD()) {
+        return false;
+    }
+
+    var SLR = document.getElementById("SLR").value;
+    if (SLR === "") {
+        alert("SLR must be filled out");
+        return false;
+    };
+    if (!validateSLR()) {
+        return false;
+    }
+
+    var KneeHyperExtension = document.getElementById("KneeHyperExtension").value;
+    if (KneeHyperExtension === "") {
+        alert("Knee Hyper Extension test must be filled out");
+        return false;
+    };
+    if (!validateKneeHyperExtension()) {
+        return false;
+    }
+
+    var KneeHipInt = document.getElementById("KneeHipInt").value;
+    if (KneeHipInt === "") {
+        alert("Prone hip IR must be filled out");
+        return false;
+    };
+    if (!validateKneeHipInt()) {
+        return false;
+    }
+
+    var KneeHipExt = document.getElementById("KneeHipExt").value;
+    if (KneeHipExt === "") {
+        alert("Prone hip ER must be filled out");
+        return false;
+    };
+    if (!validateKneeHipExt()) {
+        return false;
+    }
+
+    var FirstMTPDF = document.getElementById("FirstMTPDF").value;
+    if (FirstMTPDF === "") {
+        alert("1st MTP DF must be filled out");
+        return false;
+    };
+    if (!validateFirstMTPDF()) {
+        return false;
+    }
+    var PasseBalance = document.getElementById("PasseBalance").value;
+    if (PasseBalance === "") {
+        alert("Passe Balance test must be filled out");
+        return false;
+    };
+    if (!validatePasseBalance()) {
+        return false;
+    }
+
+    var SLBalEC = document.getElementById("SLBalEC").value;
+    if (SLBalEC === "") {
+        alert("SL Bal EC test score must be filled out");
+        return false;
+    };
+    if (!validateSLBalEC()) {
+        return false;
+    }
+
+    var SLReleve = document.getElementById("SLReleve").value;
+    if (SLReleve === "") {
+        alert("SL Releve test must be filled out");
+        return false;
+    };
+    if (!validateSLReleve()) {
+        return false;
+    }
+
+    var SLBridge = document.getElementById("SLBridge").value;
+    if (SLBridge === "") {
+        alert("SL Bridge test must be filled out");
+        return false;
+    };
+    if (!validateSLBridge()) {
+        return false;
+    }
+    var SidePlandHip = document.getElementById("SidePlandHip").value;
+    if (SidePlandHip === "") {
+        alert("Side pland w/ hip abduction test must be filled out");
+        return false;
+    };
+    if (!validateSidePlandHip()) {
+        return false;
+    }
+
+    var ckcuest = document.getElementById("CKCUEST").value;
+    if (ckcuest == "") {
+        alert("CKCUEST must be filled out");
+        return false;
+    };
+    if (!validateCkcuest()) {
+        return false;
+    }
+    getData()
+
+}
+

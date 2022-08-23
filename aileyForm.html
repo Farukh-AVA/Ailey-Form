@@ -10,6 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato&amp;display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="getData.js"></script>
+    <!--<script type="module" src="/validateForm.js"></script>-->
+
+
+
+
 </head>
 
 <body>
@@ -25,7 +31,8 @@
             <label for="TestDate">Test Date</label><br>
             <input type="date" id="date" name="TestDate"><br><br>
             <label for="email">Please enter your email address</label><br>
-            <input type="email" id="email" name="email" onchange="validateEmail()"><br><br>
+            <input type="email" id="email" name="email"><br><br>
+            <!--onchange="validateEmail()"-->
             <label for="FName">Please enter your first name</label><br>
             <input type="text" id="firstName" name="FName"><br><br>
             <label for="LName">Please enter your last name</label><br>
@@ -99,16 +106,16 @@
             <input type="number" id="KneeHyperExtension" name="KHE" min="0"><br><br>
             <!--onchange="validateKHE()"-->
             <label for="hipIR"> Enter your Knee Hip Internal Ternout test score </label><br>
-            <input type="number" id="KneeHyperExtension" name="hipIR" min="0"><br><br>
+            <input type="number" id="KneeHipInt" name="hipIR" min="0"><br><br>
             <!--onchange="validatehipIR()"-->
             <label for="hipER"> Enter your Knee Hip External Ternout test score </label><br>
-            <input type="number" id="KneeHyperExtension" name="hipER" min="0"><br><br>
+            <input type="number" id="KneeHipExt" name="hipER" min="0"><br><br>
             <!--onchange="validatehipER()"-->
             <label for="1stMTPDF"> Enter your 1st MTP DF test score </label><br>
-            <input type="number" id="1stMTPDF" name="1stMTPDF" min="0"><br><br>
+            <input type="number" id="FirstMTPDF" name="1stMTPDF" min="0"><br><br>
             <!--onchange="validate1stMTPDF()"-->
             <label for="PB"> Enter your Passe Balance test score in sec </label><br>
-            <input type="number" id="" name="PB" min="0"><br><br>
+            <input type="number" id="PasseBalance" name="PB" min="0"><br><br>
             <!--onchange="validatePB()"-->
             <label for="SLBalEC"> Enter your SL Bal EC test score in sec </label><br>
             <input type="number" id="SLBalEC" name="SLBalEC" min="0"><br><br>
@@ -176,8 +183,7 @@
             <br>
             <br>
             <!--<button type="button" onclick="pdfMake.createPdf(create_pdf()).print();">Submit</button>-->
-            <button type="button" onclick="getData()">Submit</button>
-
+            <button type="button" onclick="validateForm()">Submit</button>
         </form>
     </div>
 </body>
